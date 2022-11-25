@@ -1,0 +1,2 @@
+# Can I put my indexes in an indexes folder instead of at src level to keep it clean?
+If not, update webpack.config:  fpsJSFunctions: path.resolve(__dirname, 'src/indexes/index.ts')  // myServices is the name of the library - external reference name:  myServices.js
