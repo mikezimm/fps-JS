@@ -5,6 +5,9 @@ const fs = require('fs');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 
+const lastDirName = path.basename(__dirname);
+const dropPath = path.join(__dirname, 'temp', 'stats');
+
 module.exports = {
   mode: 'development', // switch to production when you package for production - impacts final size of package you import
   target: 'web',
@@ -54,5 +57,15 @@ module.exports = {
       directory: resolveAppPath('app'),
       publicPath: '/',
     },
-  }
+  },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: 'static',
+      reportFilename: path.join(dropPath, `${lastDirName}.stats.html`),
+      generateStatsFile: true,
+      statsFilename: path.join(dropPath, `${lastDirName}.stats.json`),
+      logLevel: 'error'
+    }),
+  ]
 };
