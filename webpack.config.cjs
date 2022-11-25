@@ -4,9 +4,12 @@ const fs = require('fs');
 
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
-
+ 
+// webpack configuration V V V file from:  https://digitalfortress.tech/debug/how-to-use-webpack-analyzer-bundle/ 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const lastDirName = path.basename(__dirname);
 const dropPath = path.join(__dirname, 'temp', 'stats');
+// webpack configuration ^ ^ ^
 
 module.exports = {
   mode: 'development', // switch to production when you package for production - impacts final size of package you import
@@ -58,6 +61,7 @@ module.exports = {
       publicPath: '/',
     },
   },
+  // webpack configuration V V V file from:  https://digitalfortress.tech/debug/how-to-use-webpack-analyzer-bundle/ 
   plugins: [
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
@@ -68,4 +72,5 @@ module.exports = {
       logLevel: 'error'
     }),
   ]
+  // webpack configuration ^ ^ ^
 };
