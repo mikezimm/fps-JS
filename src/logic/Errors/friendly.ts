@@ -1,7 +1,4 @@
 
-import { getUrlVars, getCurrentPageLink } from './LogFunctions';
-
-import { saveThisLogItem } from './SaveErrorToLog';
 /***
  *    db       .d88b.   d888b   d888b  d888888b d8b   db  d888b  
  *    88      .8P  Y8. 88' Y8b 88' Y8b   `88'   888o  88 88' Y8b 
@@ -23,16 +20,16 @@ import { getHelpfullErrorV2 } from '@mikezimm/npmfunctions/dist/Services/Logging
  * @param traceString :  Format = webpart|analyticsWeb|analyticsList|result|text1|text2|number1|number2
  * @param logErrors :  This will log any unknown errors to generic error log
  */
-export function getHelpfullErrorV2(e : any, alertMe = true, consoleLog = true, traceString: string, logErrors: boolean = true ){
+export function getHelpfullErrorV2(e : any, alertMe = true, consoleLog = true, traceString: string, logErrors: boolean = true ) : IHelpfulOutput {
 
-  let returnMess = convertHelpfullError( e, alertMe , consoleLog, traceString, logErrors ) ;
+  let returnMess: IHelpfulOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString , logErrors:logErrors } ) ;
   return returnMess;
 
 }
 
-export function getHelpfullError(e : any, alertMe = true, consoleLog = true, logErrors: boolean = true){
+export function getHelpfullError( e : any, alertMe = true, consoleLog = true, logErrors: boolean = true) : IHelpfulOutput {
 
-  let returnMess = convertHelpfullError( e, alertMe , consoleLog, null, logErrors ) ;
+  let returnMess: IHelpfulOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: null , logErrors:logErrors } ) ;
   return returnMess;
 
 }
@@ -42,7 +39,26 @@ interface IErrorX {
   errObj: any;
 }
 
-export function convertHelpfullError(e : any, alertMe = true, consoleLog = true, traceString: string | null, logErrors: boolean = true ){
+
+export interface IHelpfullInput {
+  e : any;
+  alertMe?: boolean;
+  consoleLog?: boolean;
+  traceString?: string | null;
+  logErrors?: boolean;
+}
+
+export interface IHelpfulOutput {
+  errObj: any;
+  friendly: string;
+  result: string;
+  returnMess: string;
+
+}
+
+export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfulOutput {
+
+  const { e, alertMe, consoleLog, traceString, logErrors } = inputs;
   if ( consoleLog === true ) { console.log('convertHelpfullError:',e); }
 
   /**
@@ -198,6 +214,6 @@ export function convertHelpfullError(e : any, alertMe = true, consoleLog = true,
 
   }
   
-  return returnMess;
+  return    { errObj: errObj, friendly: friendlyMessage, result: result, returnMess: returnMess, } ;
 
 }

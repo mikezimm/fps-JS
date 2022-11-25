@@ -1,16 +1,10 @@
 
-import { sortObjectArrayByStringKey, sortObjectArrayByStringKeyCollator } from './sorting';
+import { sortObjectArrayByStringKey, sortObjectArrayByStringKeyCollator } from './sorting/objects';
 
-interface SimpleLink {
-  [key: string]: string | undefined;
-  Url: string;
-  Description: string;
-  target?: string;
-}
-
+import { SimpleLink } from '../../common/interfaces/links';
 
 export interface IRailAnalytics {
-  [key: string]: string | number | SimpleLink | undefined;
+  // [key: string]: string | number | SimpleLink | undefined;
   'Title': string;            // What was done:  ie:
   'PageLink': SimpleLink;     // Link to page
   'zzzText1': string;         // Set ID
@@ -42,7 +36,7 @@ export interface IRailAnalytics {
 }
 
 export interface IArraySummaryGroup {
-  [key: string]: string | IRailAnalytics[] | any;
+  // [key: string]: string | IRailAnalytics[] | any;
   key: string;
   items: IRailAnalytics[];
   groupFilter: any;
@@ -50,7 +44,7 @@ export interface IArraySummaryGroup {
 }
 
 export interface IArraySummary {
-  [key: string]: string[] | IRailAnalytics[] | IArraySummaryGroup[];
+  // [key: string]: string[] | IRailAnalytics[] | IArraySummaryGroup[];
   keys: string[]; //Keys is just string array of all the group.key which can be used to build easy list of the keys.
   items: IRailAnalytics[];
   groups: IArraySummaryGroup[];
@@ -69,7 +63,7 @@ export interface IArraySummary {
  * @param convertNullToEmpty  - Added for potential multi-lingual issues
  * @param localLanguage 
  */
-export function groupArrayItemsByField( items: IRailAnalytics[], keys: string[], keyDelim: string, groupFilterKey: string, groupItemOrderKey: string, sort: 'asc' | 'dec', convertNullToEmpty: boolean = false, localLanguage: string = 'en' ) {
+export function groupArrayItemsByField( items: IRailAnalytics[], keys: string[], keyDelim: string, groupFilterKey: string, groupItemOrderKey: string, sort: 'asc' | 'dec', convertNullToEmpty: boolean = false, localLanguage: string = 'en' ): IArraySummary {
 
   let summary: IArraySummary = {
       keys: [],

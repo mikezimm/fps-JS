@@ -14,7 +14,7 @@ import { spliceCopyArray, addItemToArrayIfItDoesNotExist, convertNumberArrayToRe
     removeItemFromArrayOnce, removeItemFromArrayAll } from '@mikezimm/npmfunctions/dist/Services/Arrays/services';
 */
 
-export function convertArrayToLC( arr: string[] ) {
+export function convertArrayToLC( arr: string[] ) : string[] {
   let result: string[] = arr.map( str => { return str.toLowerCase(); } );
   return result;
 }
@@ -98,7 +98,7 @@ export function expandArray ( count: number ) : any[] {
  *     2020-09-24:  Updated from drilldown-filter webpart                                                                                                                                                                                                                                                                                
  */
 
-export function addItemToArrayIfItDoesNotExist (arr : string[], item: string, suppressUndefined: boolean = true ) {
+export function addItemToArrayIfItDoesNotExist (arr : string[], item: string, suppressUndefined: boolean = true ): string[] {
     if ( item === undefined ) { 
         if ( suppressUndefined != true ) {
             console.log('addItemToArrayIfItDoesNotExist found undefined!') ;
@@ -126,7 +126,7 @@ export function addItemToArrayIfItDoesNotExist (arr : string[], item: string, su
  *                                                                                                                                                                                                                                                                                                                                 
  */
 
-export function convertNumberArrayToRelativePercents( arr: number[] , percentsAsWholeNumbers : boolean = true ) {
+export function convertNumberArrayToRelativePercents( arr: number[] , percentsAsWholeNumbers : boolean = true ): number[] {
 
     let result : number[] = [];
     //Get sum of array of numbers:  https://codeburst.io/javascript-arrays-finding-the-minimum-maximum-sum-average-values-f02f1b0ce332
@@ -160,7 +160,7 @@ export function convertNumberArrayToRelativePercents( arr: number[] , percentsAs
  *                                                                                                                                                                                                                                 
  */
 
-export function removeItemFromArrayOnce(arr: any[], value : any) {
+export function removeItemFromArrayOnce(arr: any[], value : any): any[] {
     if ( arr === null || arr === undefined ) {
         //Do nothing... 
     } else {
@@ -184,7 +184,7 @@ export function removeItemFromArrayOnce(arr: any[], value : any) {
  * https://stackoverflow.com/a/5767357                                                                                                                                                                                                                        
  */
 
-export function removeItemFromArrayAll(arr: any[], value : any) {
+export function removeItemFromArrayAll(arr: any[], value : any): any[] {
     if ( arr === null || arr === undefined ) {
         //Do nothing... 
     } else {

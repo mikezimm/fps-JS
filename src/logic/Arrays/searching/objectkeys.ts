@@ -1,121 +1,93 @@
 
 /***
- *     .d8b.  d8888b. d8888b.  .d8b.  db    db .d8888. 
- *    d8' `8b 88  `8D 88  `8D d8' `8b `8b  d8' 88'  YP 
- *    88ooo88 88oobY' 88oobY' 88ooo88  `8bd8'  `8bo.   
- *    88~~~88 88`8b   88`8b   88~~~88    88      `Y8b. 
- *    88   88 88 `88. 88 `88. 88   88    88    db   8D 
- *    YP   YP 88   YD 88   YD YP   YP    YP    `8888Y' 
- *                                                     
- *                                                     
-
-//Checks
-import { doesObjectExistInArrayInt, doesObjectExistInArray, compareArrays, getMaxPropOfKeyInObjectArray, getNextElementInArray
-    getKeySummary, getKeyChanges
-    } from '@mikezimm/npmfunctions/dist/Services/Arrays/checks';
-
+ *    .d8888. d888888b d8888b. d888888b d8b   db  d888b  d888888b d88888b db    db db   dD d88888b db    db db    db  .d8b.  db      db    db d88888b 
+ *    88'  YP `~~88~~' 88  `8D   `88'   888o  88 88' Y8b   `88'   88'     `8b  d8' 88 ,8P' 88'     `8b  d8' 88    88 d8' `8b 88      88    88 88'     
+ *    `8bo.      88    88oobY'    88    88V8o 88 88         88    88ooo    `8bd8'  88,8P   88ooooo  `8bd8'  Y8    8P 88ooo88 88      88    88 88ooooo 
+ *      `Y8b.    88    88`8b      88    88 V8o88 88  ooo    88    88~~~      88    88`8b   88~~~~~    88    `8b  d8' 88~~~88 88      88    88 88~~~~~ 
+ *    db   8D    88    88 `88.   .88.   88  V888 88. ~8~   .88.   88         88    88 `88. 88.        88     `8bd8'  88   88 88booo. 88b  d88 88.     
+ *    `8888Y'    YP    88   YD Y888888P VP   V8P  Y888P  Y888888P YP         YP    YP   YD Y88888P    YP       YP    YP   YP Y88888P ~Y8888P' Y88888P 
+ *                                                                                                                                                    
+ *                                                                                                                                                    
  */
 
 /**
-  * export interface ICompareResult
-  * export interface 
-  * export interface 
-  *
-  * export function  doesObjectExistInArrayInt
-  * export function  doesObjectExistInArray
-  * export function  compareArrays
-  * export function  getMaxPropOfKeyInObjectArray
-  * export function  getNextElementInArray
-  * 
-  * export function  getKeySummary
-  * export function  getKeyChanges
-
+ * This just takes an object, and returns a string of the Key and Value.
+ * Used for logging
+ * @param thisOne 
+ * @param keyNo 
+ * @param delimiter 
  */
-
-import { stringifyKeyValue } from './services';
-
-import { getHelpfullErrorV2 } from '../Logging/ErrorHandler';
 
 /***
- *    d888888b d8b   db d8888b. d88888b db    db  .d88b.  d88888b       .d8b.  d8b   db db    db       .o88b.  .d8b.  .d8888. d88888b 
- *      `88'   888o  88 88  `8D 88'     `8b  d8' .8P  Y8. 88'          d8' `8b 888o  88 `8b  d8'      d8P  Y8 d8' `8b 88'  YP 88'     
- *       88    88V8o 88 88   88 88ooooo  `8bd8'  88    88 88ooo        88ooo88 88V8o 88  `8bd8'       8P      88ooo88 `8bo.   88ooooo 
- *       88    88 V8o88 88   88 88~~~~~  .dPYb.  88    88 88~~~        88~~~88 88 V8o88    88         8b      88~~~88   `Y8b. 88~~~~~ 
- *      .88.   88  V888 88  .8D 88.     .8P  Y8. `8b  d8' 88           88   88 88  V888    88         Y8b  d8 88   88 db   8D 88.     
- *    Y888888P VP   V8P Y8888D' Y88888P YP    YP  `Y88P'  YP           YP   YP VP   V8P    YP          `Y88P' YP   YP `8888Y' Y88888P 
- *                                                                                                                                    
- *                                                                                                                                    
+ *     d888b  d88888b d888888b      .88b  d88.  .d8b.  db    db      d8888b. d8888b.  .d88b.  d8888b.       .d88b.  d88888b      db   dD d88888b db    db 
+ *    88' Y8b 88'     `~~88~~'      88'YbdP`88 d8' `8b `8b  d8'      88  `8D 88  `8D .8P  Y8. 88  `8D      .8P  Y8. 88'          88 ,8P' 88'     `8b  d8' 
+ *    88      88ooooo    88         88  88  88 88ooo88  `8bd8'       88oodD' 88oobY' 88    88 88oodD'      88    88 88ooo        88,8P   88ooooo  `8bd8'  
+ *    88  ooo 88~~~~~    88         88  88  88 88~~~88  .dPYb.       88~~~   88`8b   88    88 88~~~        88    88 88~~~        88`8b   88~~~~~    88    
+ *    88. ~8~ 88.        88         88  88  88 88   88 .8P  Y8.      88      88 `88. `8b  d8' 88           `8b  d8' 88           88 `88. 88.        88    
+ *     Y888P  Y88888P    YP         YP  YP  YP YP   YP YP    YP      88      88   YD  `Y88P'  88            `Y88P'  YP           YP   YD Y88888P    YP    
+ *                                                                                                                                                        
+ *    d888888b d8b   db       .d88b.  d8888b.    d88b d88888b  .o88b. d888888b       .d8b.  d8888b. d8888b.  .d8b.  db    db 
+ *      `88'   888o  88      .8P  Y8. 88  `8D    `8P' 88'     d8P  Y8 `~~88~~'      d8' `8b 88  `8D 88  `8D d8' `8b `8b  d8' 
+ *       88    88V8o 88      88    88 88oooY'     88  88ooooo 8P         88         88ooo88 88oobY' 88oobY' 88ooo88  `8bd8'  
+ *       88    88 V8o88      88    88 88~~~b.     88  88~~~~~ 8b         88         88~~~88 88`8b   88`8b   88~~~88    88    
+ *      .88.   88  V888      `8b  d8' 88   8D db. 88  88.     Y8b  d8    88         88   88 88 `88. 88 `88. 88   88    88    
+ *    Y888888P VP   V8P       `Y88P'  Y8888P' Y8888P  Y88888P  `Y88P'    YP         YP   YP 88   YD 88   YD YP   YP    YP    
+ *                                                                                                                           
+ *      2021-02-14:  Copied from generic solution                                                                                                                          
  */
 
-/**
- * Based on:  https://bobbyhadz.com/blog/javascript-array-contains-string-case-insensitive
- * Any non-string checks will be considered 'not a match'
- * @param checkMe 
- * @param inArray 
- */
-export function indexOfAnyCase( checkMe: string, inArray: string[], consoleLog: boolean, alertMe: boolean ) {
-    let result = -1;
+export function getMaxPropOfKeyInObjectArray( arr: any[], key: string, find: 'max' | 'min', filterKey?: string, filterTest?: 'eq' | 'neq' , filterVal? : any ) : any {
 
-    //result = inArray.findIndex( element => { //NOTE:  findIndex does not work in my code (typescript error)
-    inArray.map( ( element: string, index ) => {
-        try {
-            if ( element.toLowerCase() === checkMe.toLowerCase() ) { result = index; }
-          }catch(e){
-            //Sending false, false to getHelpfullErrorV2  because I'm handling that here
-            let errMessage: string = getHelpfullErrorV2( e, alertMe, consoleLog, 'indexOfAnyCase ~ 65' );
+    let bestValue = null;
+
+    if ( arr === undefined || arr === null ) { return bestValue ; }
+    if ( arr.length === 0 ) { return bestValue ; }
+
+    for (let i in arr){
+
+        let checkKeyVal = arr[i][key];
+        let filterKeyVal = filterKey !== undefined ? arr[i][filterKey] : 'Undefined';
+        
+        let validTest = true;
+
+        if ( checkKeyVal === undefined || checkKeyVal === null) {
+            validTest = false;
+
+        } else if ( filterKey && filterTest && filterVal ) {
+            if ( filterTest === 'eq') {
+                if ( filterKeyVal == null || filterKeyVal == undefined || checkKeyVal !== filterKeyVal ) { validTest = false; }
+
+            } else if ( filterTest === 'neq') {
+                if ( filterKeyVal !== null && filterKeyVal !== undefined && checkKeyVal === filterKeyVal ) { validTest = false; }
+            }
         }
-    });
 
-    return result;
+        if ( validTest === true ) {
+            if ( bestValue === null || bestValue === undefined ) {
+                bestValue = checkKeyVal;
+
+            } else if ( find === 'max' ) {
+                if ( checkKeyVal > bestValue ) {
+                    bestValue = checkKeyVal;
+                }
+
+            } else if ( find === 'min' ) {
+                if ( checkKeyVal < bestValue ) {
+                    bestValue = checkKeyVal;
+                }
+
+            } // END:  if ( bestValue === null ) {
+        } // END:  if ( checkKeyVal ) {
+    } // for (let i in arr){
+
+    return bestValue;
 
 }
 
 
-/***
- *    d8888b.  .d88b.  d88888b .d8888.       .d88b.  d8888b.    d88b d88888b  .o88b. d888888b      d88888b db    db d888888b .d8888. d888888b      d888888b d8b   db  .d8b.  d8888b. d8888b.  .d8b.  db    db 
- *    88  `8D .8P  Y8. 88'     88'  YP      .8P  Y8. 88  `8D    `8P' 88'     d8P  Y8 `~~88~~'      88'     `8b  d8'   `88'   88'  YP `~~88~~'        `88'   888o  88 d8' `8b 88  `8D 88  `8D d8' `8b `8b  d8' 
- *    88   88 88    88 88ooooo `8bo.        88    88 88oooY'     88  88ooooo 8P         88         88ooooo  `8bd8'     88    `8bo.      88            88    88V8o 88 88ooo88 88oobY' 88oobY' 88ooo88  `8bd8'  
- *    88   88 88    88 88~~~~~   `Y8b.      88    88 88~~~b.     88  88~~~~~ 8b         88         88~~~~~  .dPYb.     88      `Y8b.    88            88    88 V8o88 88~~~88 88`8b   88`8b   88~~~88    88    
- *    88  .8D `8b  d8' 88.     db   8D      `8b  d8' 88   8D db. 88  88.     Y8b  d8    88         88.     .8P  Y8.   .88.   db   8D    88           .88.   88  V888 88   88 88 `88. 88 `88. 88   88    88    
- *    Y8888D'  `Y88P'  Y88888P `8888Y'       `Y88P'  Y8888P' Y8888P  Y88888P  `Y88P'    YP         Y88888P YP    YP Y888888P `8888Y'    YP         Y888888P VP   V8P YP   YP 88   YD 88   YD YP   YP    YP    
- *                                                                                                                                                                                                            
- *                                                                                                                                                                                                            
- */
+export function stringifyKeyValue( thisOne: any, keyNo: any, delimiter : string ) : string {
 
-/**
- * This function checks to see if an element of an array (object) contains a specific property/value pair.
- * 
- * example call:  if ( doesObjectExistInArray(currentFields, 'StaticName', checkField ) ) {
- * This takes an array of field objects (currentFields), and looks to see if any of the objects has a key of StaticName which has a value of checkField variable.
- * 
- * @param sourceArray 
- * @param objectProperty 
- * @param propValue 
- */
-
- export function doesObjectExistInArrayInt(sourceArray: any[], objectProperty : string, propValue : any, exact : boolean = true ){
-    let result = doesObjectExistInArray(sourceArray, objectProperty, propValue, exact );
-    if ( result === false ) { return -1 } else { return parseInt( result ) ; }
-}
-
-export function doesObjectExistInArray(sourceArray: any[], objectProperty : string, propValue : any, exact : boolean = true ){
-
-    let result : boolean | string = false;
-
-    for (let i in sourceArray){
-        let test = false;
-        if ( exact === true ) { //2020-10-07:  Added this to allow for Id string to number checks
-            test = sourceArray[i][objectProperty] === propValue ? true : false;
-        } else {
-            test = sourceArray[i][objectProperty] == propValue ? true : false;
-        }
-        if ( test ) {
-            result = i;
-            break;
-        }
-    }
-
-    return result;
+  return Object.keys(thisOne)[keyNo] + delimiter + thisOne[Object.keys(thisOne)[keyNo]];
 
 }
 
@@ -154,7 +126,7 @@ export interface ICompareResult {
   *                     In the example above, it will split Title===Training into ['Title','Training']
   *                     Then look for all items in 'inThisArray' which have the value 'Training' in the key 'Title', and apply the method you want to apply.
   */
- export function compareArrays(checkForTheseItems: any [], inThisArray: any [], method: 'AddTag' | 'ReturnNOTFound' | 'ReturnFound', keyToCheck: string, checkDelimiter : string, messsages: 'Console'|'Alert'|'Both'|'None' ) {
+ export function compareArrays(checkForTheseItems: any [], inThisArray: any [], method: 'AddTag' | 'ReturnNOTFound' | 'ReturnFound', keyToCheck: string, checkDelimiter : string, messsages: 'Console'|'Alert'|'Both'|'None' ): ICompareResult {
     let compareKey : any = 'compareArrays';
     let foundTag: any = 'Found';
     let notFoundTag = 'Not' + foundTag;
@@ -185,31 +157,31 @@ export interface ICompareResult {
             let splitArr: string[] = splitStr.split(checkDelimiter);
             let testKey: string = splitArr[0];
             let testVal: string = splitArr[1];
-    
+
             if ( splitArr.length !== 2 ) {
                 //There was a problem with the test value... needs to be syntax like this:  "Title===Email triage"
                 notFoundItems += '\n???: ' +splitStr;
             } else {
-    
+
                 //Loop through all the objects in the 'inThisArray' and process them
                 for (let i in inThisArray){
                     let objectToUpdate: any = inThisArray[i];
-    
+
                     if ( inThisArray[i][testKey] === testVal ) {
                         //Value was found.... do whatever needs to be done.
                         objectToUpdate[compareKey] = foundTag;
                         /*
                         if ( method === 'AddTag') { //Add item to result and then add keyTag to it
                             objectToUpdate[compareKey] = foundTag;
-                            
+
                         } else if ( method === 'ReturnNOTFound') { //Do not add this one to the result array
-    
-    
+
+
                         } else if ( method === 'ReturnFound') { //Not sure about this loop yet
-    
+
                         }
                         */
-                       
+
                         foundThisCheck = true;
                         break;
                     }
@@ -219,23 +191,22 @@ export interface ICompareResult {
         if ( foundThisCheck === false  ) { notFoundItems += '\nNotFound: ' +splitStr; checkForTheseItems[c][compareKey] = notFoundTag; }
     }
 
-    
     /** this is where we need to do some other things for other options
      * 
      */
 
     for (let i in inThisArray){
         let objectToUpdate: any = inThisArray[i];
-            //Value was found.... do whatever needs to be done.
-            if ( objectToUpdate[compareKey] ) { 
-                objectToUpdate[compareKey] = 'Found';
-                result.found.push(objectToUpdate);
-                foundCount ++;
-            } else { 
-                objectToUpdate[compareKey] = 'NOTFound';
-                result.notFound.push(objectToUpdate);
-                notFoundCount ++; 
-            }
+        //Value was found.... do whatever needs to be done.
+        if ( objectToUpdate[compareKey] ) { 
+            objectToUpdate[compareKey] = 'Found';
+            result.found.push(objectToUpdate);
+            foundCount ++;
+        } else { 
+            objectToUpdate[compareKey] = 'NOTFound';
+            result.notFound.push(objectToUpdate);
+            notFoundCount ++; 
+        }
     }
 
     result.message = result.notFound.map( thisOne => { 
@@ -287,21 +258,21 @@ export interface ICompareResult {
   * @param ignoreKeys   Tested values = ['element'];
   * @returns 
   */
- export function getKeySummary( baselineObject: any, compareTypes : string[], ignoreKeys : string[], parseMe: boolean ) {
+ export function getKeySummary( baselineObject: any, compareTypes : string[], ignoreKeys : string[], parseMe: boolean ) : any {
 
-    let keySummary: any = {};
+  let keySummary: any = {};
 
-    Object.keys( baselineObject ).map( key => {
-      let keyType = typeof baselineObject[key];
-      if ( compareTypes.indexOf( keyType ) > -1 && ignoreKeys.indexOf( key ) < 0 ) { 
-        keySummary[key] = baselineObject[key];
-      } 
-    });
-  
-    if ( parseMe !== false ) { keySummary = JSON.parse( JSON.stringify( keySummary ) ) ; } 
+  Object.keys( baselineObject ).map( key => {
+    let keyType = typeof baselineObject[key];
+    if ( compareTypes.indexOf( keyType ) > -1 && ignoreKeys.indexOf( key ) < 0 ) { 
+      keySummary[key] = baselineObject[key];
+    } 
+  });
 
-    return keySummary;
- }
+  if ( parseMe !== false ) { keySummary = JSON.parse( JSON.stringify( keySummary ) ) ; } 
+
+  return keySummary;
+}
 
  
 export const BaseFieldKeys = ['Title','StaticName','TypeAsString','FieldTypeKind','TypeDisplayName','Formula','InternalName','Required','Sealed','CanBeDeleted'];
@@ -344,7 +315,7 @@ export const KeyChangeDelimiter = ' >>> ';
   * @param compareObject 
   * @param parseMe 
   */
- export function getKeyChanges( baselineObject: any, specificKeys: string[], compareObject : any, parseMe: boolean ) {
+ export function getKeyChanges( baselineObject: any, specificKeys: string[], compareObject : any, parseMe: boolean ): any {
 
     let keyChanges : any = {};
     let TestTheseKeys =[];
