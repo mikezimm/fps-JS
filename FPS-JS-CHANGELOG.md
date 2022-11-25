@@ -66,3 +66,4 @@ Added folder for functions, interfaces etc specifically built for some component
 
 ### common - interfaces or functions that seem to be used in a lot of places
 - ISimpleLink with Url, Description, target? :  src/common/interfaces/links.ts
+- DisplayMode so I do not need msft import : src\common\interfaces\displayMode.ts
