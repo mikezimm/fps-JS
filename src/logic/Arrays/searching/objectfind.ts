@@ -1,6 +1,6 @@
 
 
-import { getHelpfullErrorV2, IHelpfulOutput } from '../../errors/friendly';
+import { getHelpfullErrorV2, IHelpfulOutput } from '../../Errors/friendly';
 
 /***
  *    d888888b d8b   db d8888b. d88888b db    db  .d88b.  d88888b       .d8b.  d8b   db db    db       .o88b.  .d8b.  .d8888. d88888b 
