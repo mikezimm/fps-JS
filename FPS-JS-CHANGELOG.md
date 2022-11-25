@@ -52,7 +52,6 @@ imported npmFunctions/src/Lists/get2 folder inot pnpjs/Lists/GetVX folder
 - Created Arrays/searching folder, split functions into ojbectfind and objectkeys
 - Created Arrays/sorting folder, split into interfaces, number | string | object arrays files
 
-
 ### errors, logging
 - imported npmFunctions/src/Services/Logging folder into Logic/Errors folder
 - Only importing the friendly message logic.
