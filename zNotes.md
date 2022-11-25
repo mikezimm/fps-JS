@@ -1,3 +1,14 @@
+# Removed from TrainingSample/package.json:
+
+  "devDependencies": {
+    "@types/react": "16.9.51",
+    "@types/react-dom": "16.9.8",
+    "@types/lodash-es": "^4.17.21"
+
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
 
 
 ## Before bundling final version to publish for production:

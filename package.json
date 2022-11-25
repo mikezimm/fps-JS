@@ -36,8 +36,6 @@
     "not dead"
   ],
   "devDependencies": {
-    "@types/react": "16.9.51",
-    "@types/react-dom": "16.9.8",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
@@ -48,15 +46,12 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0",
-    "@types/lodash-es": "^4.17.21"
+    "webpack-dev-server": "^4.11.0"
   },
   "files": [
     "/lib"
   ],
   "dependencies": {
-    // "lodash-es": "^4.17.21",
-    // "react": "16.13.1",
-    // "react-dom": "16.13.1"
+
   }
 }
