@@ -43,8 +43,8 @@ module.exports = {
     }]
   },
   externals: { // Read webpack documentation - do not want to bundle these into the package
-    "react": "React",
-    "lodash-es": "lodash-es/*"
+    // "react": "React",
+    // "lodash-es": "lodash-es/*"
   },
   devServer: {
     compress: true,

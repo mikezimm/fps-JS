@@ -1,8 +1,7 @@
 {
-  "name": "@mikezimm/sample-library",
+  "name": "@mikezimm/fps-js",
   "version": "1.0.0",
-  "description": "Sample Library",
-  "license": "UNLICENSED",
+  "description": "Library of reusable typescript/javascript functions, interfaces and constants",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "engines": {
@@ -16,6 +15,20 @@
     "clean": "del-cli \"./?(dist|lib)\"",
     "lint": "eslint ./src --ext .ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikezimm/fps-JS.git"
+  },
+  "keywords": [
+    "SPFx",
+    "functions"
+  ],
+  "author": "Mike Zimmerman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikezimm/fps-JS/issues"
+  },
+
   "browserslist": [
     "last 1 version",
     "> 1%",
@@ -42,8 +55,8 @@
     "/lib"
   ],
   "dependencies": {
-    "lodash-es": "^4.17.21",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    // "lodash-es": "^4.17.21",
+    // "react": "16.13.1",
+    // "react-dom": "16.13.1"
   }
 }
