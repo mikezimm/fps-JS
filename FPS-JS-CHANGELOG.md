@@ -5,11 +5,33 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.3
+npm install @mikezimm/fps-js@1.0.4
 
 # Changelog
+## 1.0.4 - 2202-Nov-24
+- imported npmFunctions/src/Fields/constants and Interfaces into src/Pnpjs/Fields
+    changed ootbFields constant to OotbFields ( with leading capital for style consistancy )
+    added Fields constants and IFieldDef to indexes
+
+- impported src\QuickCommands_ into src\components\QuickCommands
+    removed the [key: string]: from interfaces
+    added QuickCommands Interfaces to indexes
+
+- imported src\Services\Math_ to src\logic\Math
+    Split into src\logic\Math\labels.ts & src\logic\Math\rounding.ts
+    Added indexes: src\indexes\MathLabels.ts and src\indexes\MathRounding.ts
+
+- imported src\Services\Objects_ to logic/Objects
+    Split into 3 files with 3 indexes
+    export * from './ObjectDeep'; - checkDeepProperty, IReturnErrorType
+    export * from './ObjectKeys'; - Moved getKeyChanges, getKeySummary, from Arrays/checks
+    export * from './ObjectSimilar'; - findPropFromSimilarKey
+
+- imported src\Services\randomServices.ts to src\logic\Randomize\functions.ts
+    Added return function types and indexes
+
 ## 1.0.3 - 2202-Nov-24
-  move interface:  ISimpleLink to src\logic\Links\Interfaces.ts
+  move interface:  ISimpleLink to src/logic/Links/Interfaces.ts
   Add Link related functions ie LogFunctions.ts from npmFunctions/Services/Logging into here:  logic/Links/UrlFunctions.ts
     On functions, also added return types and index.ts
 
@@ -58,7 +80,7 @@ imported npmFunctions/src/Lists/get2 folder inot pnpjs/Lists/GetVX folder
 - imported npmFunctions/src/Services/Arrays folder into Logic/Arrays folder
 - added return types to all functions
 - ISeriesSort, ISeriesSortObject   : src/logic/Arrays/sorting/Interfaces.ts ( was originally in ICSSCharts but is commonly used outside of charts themselves for sorting )
-- Renamed Arrays/services.ts to:  src\logic\Arrays\searching.ts ( It only has searching/finding related functions )
+- Renamed Arrays/services.ts to:  src/logic/Arrays/searching.ts ( It only has searching/finding related functions )
 - Created Arrays/searching folder, split functions into ojbectfind and objectkeys
 - Created Arrays/sorting folder, split into interfaces, number | string | object arrays files
 
@@ -75,4 +97,4 @@ Added folder for functions, interfaces etc specifically built for some component
 
 ### common - interfaces or functions that seem to be used in a lot of places
 - IISimpleLink with Url, Description, target? :  src/common/interfaces/links.ts
-- DisplayMode so I do not need msft import : src\common\interfaces\displayMode.ts
+- DisplayMode so I do not need msft import : src/common/interfaces/displayMode.ts

@@ -1,5 +1,5 @@
 
- import { getKeyChanges } from './searching/objectkeys';
+ import { getKeyChanges } from '../../logic/Objects/keys';
 
 export type IIncludeOrIgnore = 'Ignore' | 'Include' ;
 
