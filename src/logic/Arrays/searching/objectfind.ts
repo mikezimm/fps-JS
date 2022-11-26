@@ -1,6 +1,6 @@
 
 
-import { getHelpfullErrorV2, IHelpfulOutput } from '../../Errors/friendly';
+import { getHelpfullErrorV2, IHelpfullOutput } from '../../Errors/friendly';
 
 /***
  *    d888888b d8b   db d8888b. d88888b db    db  .d88b.  d88888b       .d8b.  d8b   db db    db       .o88b.  .d8b.  .d8888. d88888b 
@@ -28,7 +28,7 @@ export function indexOfAnyCase( checkMe: string, inArray: string[], consoleLog: 
           if ( element.toLowerCase() === checkMe.toLowerCase() ) { result = index; }
         }catch(e){
           //Sending false, false to getHelpfullErrorV2  because I'm handling that here
-          let errMessage: IHelpfulOutput = getHelpfullErrorV2( e, alertMe, consoleLog, 'indexOfAnyCase ~ 65' );
+          let errMessage: IHelpfullOutput = getHelpfullErrorV2( e, alertMe, consoleLog, 'indexOfAnyCase ~ 65' );
       }
     });
 

@@ -1,12 +1,12 @@
 
 import { sortObjectArrayByStringKey, sortObjectArrayByStringKeyCollator } from './sorting/objects';
 
-import { SimpleLink } from '../../common/interfaces/links';
+import type { ISimpleLink,  } from "../../logic/Links/Interfaces";
 
 export interface IRailAnalytics {
-  // [key: string]: string | number | SimpleLink | undefined;
+  // [key: string]: string | number | ISimpleLink | undefined;
   'Title': string;            // What was done:  ie:
-  'PageLink': SimpleLink;     // Link to page
+  'PageLink': ISimpleLink;     // Link to page
   'zzzText1': string;         // Set ID
   'zzzText2': string;         // Time Key
   'zzzText3': string;         // Value1:  Group Name
@@ -14,11 +14,11 @@ export interface IRailAnalytics {
   'zzzText5': string;         // siteGuid
   'zzzText6': string;         // List or Site for assigning permissions
   'zzzText7': string;         // Sort Order
-  'SiteLink': SimpleLink;     // 
+  'SiteLink': ISimpleLink;     // 
   'SiteTitle': string;        // 
-  'TargetSite': SimpleLink;   //
+  'TargetSite': ISimpleLink;   //
   'Result': string;           // Was success or error
-  'TargetList': SimpleLink;   // 
+  'TargetList': ISimpleLink;   // 
   'ListTitle': string;        // 
   'zzzRichText1': string;     // Action JSON 
   'zzzRichText2': string;     // Action JSON 

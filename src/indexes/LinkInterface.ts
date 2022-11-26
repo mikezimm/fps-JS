@@ -1,5 +1,5 @@
 
-import type { SimpleLink,  } from "../common/interfaces/links";
+import type { ISimpleLink,  } from "../logic/Links/Interfaces";
 
-export { SimpleLink, };
+export { ISimpleLink, };
 

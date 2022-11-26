@@ -20,16 +20,16 @@ import { getHelpfullErrorV2 } from '@mikezimm/npmfunctions/dist/Services/Logging
  * @param traceString :  Format = webpart|analyticsWeb|analyticsList|result|text1|text2|number1|number2
  * @param logErrors :  This will log any unknown errors to generic error log
  */
-export function getHelpfullErrorV2(e : any, alertMe = true, consoleLog = true, traceString: string, logErrors: boolean = true ) : IHelpfulOutput {
+export function getHelpfullErrorV2(e : any, alertMe = true, consoleLog = true, traceString: string, logErrors: boolean = true ) : IHelpfullOutput {
 
-  let returnMess: IHelpfulOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString , logErrors:logErrors } ) ;
+  let returnMess: IHelpfullOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: traceString , logErrors:logErrors } ) ;
   return returnMess;
 
 }
 
-export function getHelpfullError( e : any, alertMe = true, consoleLog = true, logErrors: boolean = true) : IHelpfulOutput {
+export function getHelpfullError( e : any, alertMe = true, consoleLog = true, logErrors: boolean = true) : IHelpfullOutput {
 
-  let returnMess: IHelpfulOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: null , logErrors:logErrors } ) ;
+  let returnMess: IHelpfullOutput = convertHelpfullError( { e:e, alertMe:alertMe , consoleLog: consoleLog , traceString: null , logErrors:logErrors } ) ;
   return returnMess;
 
 }
@@ -48,7 +48,7 @@ export interface IHelpfullInput {
   logErrors?: boolean;
 }
 
-export interface IHelpfulOutput {
+export interface IHelpfullOutput {
   errObj: any;
   friendly: string;
   result: string;
@@ -56,7 +56,7 @@ export interface IHelpfulOutput {
 
 }
 
-export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfulOutput {
+export function convertHelpfullError( inputs: IHelpfullInput ) : IHelpfullOutput {
 
   const { e, alertMe, consoleLog, traceString, logErrors } = inputs;
   if ( consoleLog === true ) { console.log('convertHelpfullError:',e); }

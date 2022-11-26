@@ -1,5 +1,5 @@
 
-export interface SimpleLink {
+export interface ISimpleLink {
   // [key: string]: string | undefined;
   Url: string;
   Description: string;

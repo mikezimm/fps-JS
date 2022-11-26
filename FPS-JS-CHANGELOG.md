@@ -5,9 +5,19 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.0
+npm install @mikezimm/fps-js@1.0.3
 
 # Changelog
+## 1.0.3 - 2202-Nov-24
+  move interface:  ISimpleLink to src\logic\Links\Interfaces.ts
+  Add Link related functions ie LogFunctions.ts from npmFunctions/Services/Logging into here:  logic/Links/UrlFunctions.ts
+    On functions, also added return types and index.ts
+
+## 1.0.2 - 2202-Nov-24
+  change spelling of interface:  SimpleLink to ISimpleLink
+
+## 1.0.1 - 2202-Nov-24
+  change spelling of interface:  IHelpfulOutput to IHelpfullOutput
 
 ## 1.0.0 - 2202-Nov-24
 
@@ -64,5 +74,5 @@ Added folder for functions, interfaces etc specifically built for some component
 - src/components/Refiners
 
 ### common - interfaces or functions that seem to be used in a lot of places
-- ISimpleLink with Url, Description, target? :  src/common/interfaces/links.ts
+- IISimpleLink with Url, Description, target? :  src/common/interfaces/links.ts
 - DisplayMode so I do not need msft import : src\common\interfaces\displayMode.ts
