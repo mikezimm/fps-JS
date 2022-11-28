@@ -5,29 +5,37 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.4
+npm install @mikezimm/fps-js@1.0.5
+
+
 
 # Changelog
+## 1.0.5 - 2202-Nov-27
+- imported HeadingTag functions, interfaces, css into src/logic/DOM/Tags/ from:
+    npmFuctions/src/HeadingCSS_
+    npmFuctions/src/Services/DOM/Tags/FPSTagFunctions.ts
+
+
 ## 1.0.4 - 2202-Nov-24
 - imported npmFunctions/src/Fields/constants and Interfaces into src/Pnpjs/Fields
     changed ootbFields constant to OotbFields ( with leading capital for style consistancy )
     added Fields constants and IFieldDef to indexes
 
-- impported src\QuickCommands_ into src\components\QuickCommands
+- impported src/QuickCommands_ into src/components/QuickCommands
     removed the [key: string]: from interfaces
     added QuickCommands Interfaces to indexes
 
-- imported src\Services\Math_ to src\logic\Math
-    Split into src\logic\Math\labels.ts & src\logic\Math\rounding.ts
-    Added indexes: src\indexes\MathLabels.ts and src\indexes\MathRounding.ts
+- imported src/Services/Math_ to src/logic/Math
+    Split into src/logic/Math/labels.ts & src/logic/Math/rounding.ts
+    Added indexes: src/indexes/MathLabels.ts and src/indexes/MathRounding.ts
 
-- imported src\Services\Objects_ to logic/Objects
+- imported src/Services/Objects_ to logic/Objects
     Split into 3 files with 3 indexes
     export * from './ObjectDeep'; - checkDeepProperty, IReturnErrorType
     export * from './ObjectKeys'; - Moved getKeyChanges, getKeySummary, from Arrays/checks
     export * from './ObjectSimilar'; - findPropFromSimilarKey
 
-- imported src\Services\randomServices.ts to src\logic\Randomize\functions.ts
+- imported src/Services/randomServices.ts to src/logic/Randomize/functions.ts
     Added return function types and indexes
 
 ## 1.0.3 - 2202-Nov-24
