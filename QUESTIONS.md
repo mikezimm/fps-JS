@@ -13,7 +13,8 @@ WebPartContext >> WebPartContextCopy152
 Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
 Maybe for now just have separate npm for css, not have any logic in it at all?
 
-
+# How do I get Readme and ChangeLog added to lib?
+Want version history etc to be copied as well
 
 # How do I get web pack analyizer working?
 In a web part project, I add it to the gulpfile.js

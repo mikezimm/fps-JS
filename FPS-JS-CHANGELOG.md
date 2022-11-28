@@ -5,10 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.9
+npm install @mikezimm/fps-js@1.0.10
 
 
 # Changelog
+## 1.0.10 - 2202-Nov-27
+- update WebPartContext@1.15.2 in src/common/interfaces/WebPartContext@1.15.2.ts
+    added absoluteUrl
+
 ## 1.0.9 - 2202-Nov-27
 - create WebPartContext@1.15.2 in src/common/interfaces/WebPartContext@1.15.2.ts for typing
     added indexes:  src/indexes/WebPartContext@152.ts
