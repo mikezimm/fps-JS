@@ -27,6 +27,9 @@ export * from './ObjectSimilar';
 export * from './PnpjsFieldsConstants';
 export * from './PnpjsListGetBasic';
 export * from './PnpjsListGetFull';
+export * from './PnpSPFxPropControls@3.11.0';
+
+
 
 export * from './QuickCommands';
 
@@ -34,3 +37,4 @@ export * from './Randomize';
 export * from './Refiners';
 
 export * from './UrlFunctions';
+export * from './WebPartContext@152';

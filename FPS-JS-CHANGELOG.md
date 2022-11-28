@@ -5,14 +5,19 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.8
-
+npm install @mikezimm/fps-js@1.0.9
 
 
 # Changelog
+## 1.0.9 - 2202-Nov-27
+- create WebPartContext@1.15.2 in src/common/interfaces/WebPartContext@1.15.2.ts for typing
+    added indexes:  src/indexes/WebPartContext@152.ts
+- import npmFunctions\src\Services\Strings to:  src\logic\Strings
+    NEED TO CREATE INDEXES for STRINGS though
+
 ## 1.0.8 - 2202-Nov-27
-- copied spfxPropControls\@3.11.0 interfaces to avoid import:  src\common\interfaces\openSource\spfxPropControls\@3.11.0
-    added indexes:  src\indexes\PnpSPFxPropControls@3.11.0.ts
+- copied spfxPropControls/@3.11.0 interfaces to avoid import:  src/common/interfaces/openSource/spfxPropControls/@3.11.0
+    added indexes:  src/indexes/PnpSPFxPropControls@3.11.0.ts
 
 ## 1.0.7 - 2202-Nov-27
 - added HeadingsCSS and DOM Tags Indexes, removed FPSHeadingCSS file.
@@ -21,8 +26,8 @@ npm install @mikezimm/fps-js@1.0.8
 
 ## 1.0.6 - 2202-Nov-27
 - restructured HeadingsCSS and DOM Tags folders:
-  all heading related code:  src\logic\DOM\Headings
-  all generic tag related code:  src\logic\DOM\Tags
+  all heading related code:  src/logic/DOM/Headings
+  all generic tag related code:  src/logic/DOM/Tags
 
 ## 1.0.5 - 2202-Nov-27
 - imported HeadingTag functions, interfaces, css into src/logic/DOM/Tags/ from:

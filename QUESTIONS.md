@@ -5,6 +5,16 @@ If not, update webpack.config:  fpsJSFunctions: path.resolve(__dirname, 'src/ind
 React is always on the page, fps-react will usually refer to fps-js.
 I may want to keep some things in the js library in sync with the react library.
 
+# Can I make my own local minimized version of microsoft classes in order to keep some typing?
+PageContext >> PageContextCopy152
+WebPartContext >> WebPartContextCopy152
+
+# CSS CSS CSS.... 
+Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
+Maybe for now just have separate npm for css, not have any logic in it at all?
+
+
+
 # How do I get web pack analyizer working?
 In a web part project, I add it to the gulpfile.js
 Did I do it correctly in webpack.config?  I followed this guide:  https://digitalfortress.tech/debug/how-to-use-webpack-analyzer-bundle/
@@ -17,11 +27,5 @@ Especially true for unused imports
 # Whats diff between:
 "@typescript-eslint/no-unused-expressions": "error",
 'no-unused-expression': 2,
-
-# CSS CSS CSS.... 
-Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
-Maybe for now just have separate npm for css, not have any logic in it at all?
-
-
 
 
