@@ -5,11 +5,15 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.5
+npm install @mikezimm/fps-js@1.0.8
 
 
 
 # Changelog
+## 1.0.8 - 2202-Nov-27
+- copied spfxPropControls\@3.11.0 interfaces to avoid import:  src\common\interfaces\openSource\spfxPropControls\@3.11.0
+    added indexes:  src\indexes\PnpSPFxPropControls@3.11.0.ts
+
 ## 1.0.7 - 2202-Nov-27
 - added HeadingsCSS and DOM Tags Indexes, removed FPSHeadingCSS file.
     export * from './DOMHeadings';
