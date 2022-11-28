@@ -10,6 +10,16 @@ npm install @mikezimm/fps-js@1.0.5
 
 
 # Changelog
+## 1.0.7 - 2202-Nov-27
+- added HeadingsCSS and DOM Tags Indexes, removed FPSHeadingCSS file.
+    export * from './DOMHeadings';
+    export * from './DOMTags';
+
+## 1.0.6 - 2202-Nov-27
+- restructured HeadingsCSS and DOM Tags folders:
+  all heading related code:  src\logic\DOM\Headings
+  all generic tag related code:  src\logic\DOM\Tags
+
 ## 1.0.5 - 2202-Nov-27
 - imported HeadingTag functions, interfaces, css into src/logic/DOM/Tags/ from:
     npmFuctions/src/HeadingCSS_

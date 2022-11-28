@@ -8,6 +8,8 @@
  * NOTE:  h2 in html is really h1 on sharepoint page
  */
 
+import { IHTMLRegEx, IRegExTag } from "./Interfaces";
+
 
 
 //This was based upon examples found in react-page-navigation Service.ts file
@@ -22,21 +24,6 @@
 // export const RegexHeading12StartG = /<h[1-2](.*?)>/g;
 // export const RegexHeading12StartN = /<h[1-2](.*?)>/;
 // export const RegexHeading12EndG = /<\/h[1-2]>/g;
-
-
-export interface IRegExTag {
-    key: string;
-    desc: string;
-    
-    misc?: string;
-    // tags?: string[];
-    tags: string[];  //Set to required to fix lint error in: FPSApplyHeadingCSS
-    open: RegExp;
-    close: RegExp;
-    openG: RegExp;
-    closeG: RegExp;
-}
-
 
 
 const openTagStr = '<tag(.*?)>';
@@ -94,27 +81,6 @@ export const h14RegEx :IRegExTag = {
     openG: new RegExp(openTagStr.replace('tag', h14Tag ), 'g' ),
     closeG: new RegExp(closeTagStr.replace('tag', h14Tag ), 'g' ),
 };
-
-export interface IHTMLRegEx {
-    h1?: IRegExTag;
-    h2?: IRegExTag;
-    h3?: IRegExTag;
-    h4?: IRegExTag;
-    h12?: IRegExTag;
-    h13?: IRegExTag;
-    h14?: IRegExTag;
-    p?: IRegExTag;
-    div?: IRegExTag;
-    li?: IRegExTag;
-    a?: IRegExTag;
-    mark?: IRegExTag;
-    bold?: IRegExTag;
-    img?: IRegExTag;
-    script?: IRegExTag;
-    style?: IRegExTag;
-}
-
-export type IHTMLRegExKeys = 'h1' | 'h2' | 'h3' | 'h4' | 'h12' | 'h13' | 'h14' | 'p' | 'mark' | 'bold' | 'li' | 'img' ;
 
 export const HTMLRegEx: IHTMLRegEx = {
     h1: createTagRegex( 'h1', 'Finds Not sure in SharePoint Pages'),

@@ -6,8 +6,8 @@
  * Updated from FPSPage Info 2022-07-27.
  */
 
- import { IFPSHeadingClass } from './InterfaceHeadings';
- import { IRegExTag } from './regexHtmlTags';
+ import { IFPSHeadingClass } from '../Headings/Interfaces';
+ import { IRegExTag } from './Interfaces';
  
  export type IFPSKnownStyleClasses = IFPSHeadingClass | string;
  

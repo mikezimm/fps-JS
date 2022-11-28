@@ -18,6 +18,10 @@ Especially true for unused imports
 "@typescript-eslint/no-unused-expressions": "error",
 'no-unused-expression': 2,
 
+# CSS CSS CSS.... 
+Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
+Maybe for now just have separate npm for css, not have any logic in it at all?
+
 
 
 

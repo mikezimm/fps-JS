@@ -8,6 +8,9 @@ export * from './ArraySortingObjects';
 export * from './ArraySortingStrings';
 
 export * from './DisplayMode';
+export * from './DOMHeadings';
+export * from './DOMTags';
+
 export * from './HelpfullErrors';
 
 
