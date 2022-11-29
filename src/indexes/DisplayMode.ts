@@ -1,5 +1,5 @@
 
-import type { DisplayMode,  } from "../common/interfaces/displayMode";
+import { DisplayMode, } from "../common/interfaces/@msft/displayMode";
 
 export { DisplayMode, };
 

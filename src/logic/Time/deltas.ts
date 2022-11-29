@@ -29,7 +29,6 @@
   import { monthStr, monthStr3 } from './monthLabels';
 
  import { IDeltaDaysArray } from './Interfaces';
-  import { IUser} from '../Users/IUserInterfaces';
 
   export function getTimeDelta( time1 : any, time2 : any, inWhat : string ){
     let date = new Date(time1).getTime();

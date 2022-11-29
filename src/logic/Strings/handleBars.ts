@@ -1,5 +1,5 @@
 
-import { WebPartContextCopy_15_2 } from '../../common/interfaces/WebPartContext@1.15.2';
+import { WebPartContextCopy_15_2 } from '../../common/interfaces/@msft/WebPartContext@1.15.2';
 
 export interface IHandleBarReplacements {
   // [key: string]: string[];
