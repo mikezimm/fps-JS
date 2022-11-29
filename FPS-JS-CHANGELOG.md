@@ -5,12 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.10
+npm install @mikezimm/fps-js@1.0.11
 
 
 # Changelog
 ## 1.0.11 - 2202-Nov-28
 - Added StringsIndex, added return types to string functions
+- Add CSSCharts index
+- Reviewed other logic and Types files, added comments and return functions
 
 ## 1.0.10 - 2202-Nov-27
 - update WebPartContext@1.15.2 in src/common/interfaces/WebPartContext@1.15.2.ts
