@@ -15,6 +15,15 @@ npm install @mikezimm/fps-js@1.0.11
 - Added Class Copy:  SPPermissionCopy_15_2, added more to PageContextCopy_15_2
 - Added src\logic\Regex\constants.ts from:  npmFunctions/src\Services\Regex\constants.ts - Moved INullOrStringArray  from file
 
+- Add Users, Audiences and some MSFT Classes but they are now causing some build errors like this:
+WARNING in ./src/indexes/IPropertyPaneDropdownOption@1.15.2.ts 2:0-48
+export 'PropertyPaneDropdownOptionType_15_2' (reexported as 'PropertyPaneDropdownOptionType_15_2') was not found in '../common/interfaces/@msft/IPropertyPaneDropdownOption@1.15.2' (module has no exports)
+ @ ./src/indexes/index.ts 13:0-53 13:0-53
+
+I think it is Audiences that need to be here (at least the constants) but they are nested in with PropPaneDropdown Options which I copied in as well.
+
+
+
 ## 1.0.11 - 2202-Nov-28
 - Added StringsIndex, added return types to string functions
 - Add CSSCharts index

@@ -8,6 +8,9 @@ I may want to keep some things in the js library in sync with the react library.
 # Can I make my own local minimized version of microsoft classes in order to keep some typing?
 PageContext >> PageContextCopy152
 WebPartContext >> WebPartContextCopy152
+SPPermissions >>
+IPropPaneDropdown... >> Need this for EveryoneAudience or I have to split code between 2 projects which need to be together to prevent typos.
+
 
 # CSS CSS CSS.... 
 Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
