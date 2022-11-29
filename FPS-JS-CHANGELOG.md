@@ -8,7 +8,13 @@ npm publish --access=public
 npm install @mikezimm/fps-js@1.0.11
 
 
+
 # Changelog
+## 1.0.12 - 2202-Nov-28
+- Added src\logic\Time from: npmFunctions/src\Services\Time_
+- Added Class Copy:  SPPermissionCopy_15_2, added more to PageContextCopy_15_2
+- Added src\logic\Regex\constants.ts from:  npmFunctions/src\Services\Regex\constants.ts - Moved INullOrStringArray  from file
+
 ## 1.0.11 - 2202-Nov-28
 - Added StringsIndex, added return types to string functions
 - Add CSSCharts index

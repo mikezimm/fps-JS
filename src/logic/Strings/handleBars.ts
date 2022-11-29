@@ -1,5 +1,5 @@
 
-import { WebPartContextCopy152 } from '../../common/interfaces/WebPartContext@1.15.2';
+import { WebPartContextCopy_15_2 } from '../../common/interfaces/WebPartContext@1.15.2';
 
 export interface IHandleBarReplacements {
   // [key: string]: string[];
@@ -30,7 +30,7 @@ export const HandleBarReplacements : IHandleBarReplacements = {
  * @param context 
  * @returns 
  */
-export function replaceHandleBars( str: string , context: WebPartContextCopy152 ): string {
+export function replaceHandleBars( str: string , context: WebPartContextCopy_15_2 ): string {
 
     if ( !str ) { return '' ; } else {
 

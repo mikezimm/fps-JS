@@ -1,3 +1,9 @@
+/**
+ * Migrated from
+ * npmFunctions/src\Services\Regex_\htmlTags_.ts
+ * 
+ * Some functions in the file were moved to logic/DOM/Tags
+ */
 
 export interface IRegExTag {
   key: string;
