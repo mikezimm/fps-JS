@@ -13,7 +13,7 @@
  *                                                                                                                                                                    
  */
 
- export function encodeDecodeString( str : string , doThis: 'encode' | 'decode') {
+ export function encodeDecodeString( str : string , doThis: 'encode' | 'decode'): string {
 
     //https://abstractspaces.wordpress.com/2008/05/07/sharepoint-column-names-internal-name-mappings-for-non-alphabet/
   
@@ -70,7 +70,7 @@
  * 
  * @param str
  */
- export function cleanSPListURL( str : string ) {
+ export function cleanSPListURL( str : string ): string {
     return str.replace(/\s\%\&\?\.\+/g, '');
   
   }
@@ -90,7 +90,7 @@
   //const sum1 = function(list, prop){ return list.reduce( function(a, b){ return a + b[prop];}, 0);}
   //const sum2 = (list,prop) =>  { return list.reduce((a,b) => {return (a+ b[prop])}, 0);}
   
-  export function cleanURL(originalURL: String) {
+  export function cleanURL(originalURL: String): string {
   
       let newURL = originalURL.toLowerCase();
       if ( newURL.indexOf('/sitepages/') > 0 ) { return newURL.substring(0, newURL.indexOf('/sitepages/') + 1) ; }
@@ -116,7 +116,7 @@
      * NOTE This only works when the /sites/ you are refering to is in the same tenant
      * @param relUrl 
      */
-    export function getFullUrlFromSlashSitesUrl( relUrl : string, showConsole: boolean = true ) {
+    export function getFullUrlFromSlashSitesUrl( relUrl : string, showConsole: boolean = true ): string {
       if ( relUrl === undefined || relUrl === null ) { relUrl = '' ; }
       let newURL = relUrl + '';
       //Added this to prevent errors in next
@@ -140,7 +140,7 @@
 // protocol: "https:"
 // search: "?debug=true&noredir=true&debugManifestsFile=https%3A%2F%2Flocalhost%3A4321%2Ftemp%2Fmanifests.js&allowOtherSites=true&scenario=dev"
 
-export function getSiteCollectionUrlFromLink( link: string ) {
+export function getSiteCollectionUrlFromLink( link: string ): string {
   if ( !link || link.length === 0 ) {
     link = window.location.pathname ;
   } else if ( link.indexOf('http') === 0 ) {
@@ -171,7 +171,7 @@ export const regexAnyProtocoll = /https?:\/\/+/ig; // https:// or hTTps:// or ht
  * @param url 
  * @returns 
  */
-export function standardizeLocalLink( url : string ) {
+export function standardizeLocalLink( url : string ): string {
 
   //1.) remove the hostname from a link
   let newUrl = url.toLowerCase().indexOf( `${window.location.origin}` ) === 0 ? url.slice( window.location.origin.length ) : url;

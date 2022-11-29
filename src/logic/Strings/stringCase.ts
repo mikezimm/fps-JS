@@ -36,7 +36,7 @@ import { camelToSentanceCase, camelize, randomizeCase, upperFirstLetter, lowerFi
   * 
   */   
 
- export function camelToSentanceCase( oldString: string, capFirst = true ) {
+ export function camelToSentanceCase( oldString: string, capFirst = true ): string {
     var result = oldString.replace( /([A-Z])/g, " $1" );
     var finalResult = capFirst === true ? result.charAt(0).toUpperCase() + result.slice(1) : result;
     finalResult = finalResult.trim();
@@ -47,7 +47,7 @@ import { camelToSentanceCase, camelize, randomizeCase, upperFirstLetter, lowerFi
 
   
 //https://stackoverflow.com/a/2970667/4210807
-export function camelize(str : string ,firstCap: boolean) {
+export function camelize(str : string ,firstCap: boolean): string {
 
     if ( str == null ) { return ''; }
     else {
@@ -62,7 +62,7 @@ export function camelize(str : string ,firstCap: boolean) {
     }
 }
 
-export function upperFirstLetter( str : string, onErrorReturnEmpty : boolean ) { 
+export function upperFirstLetter( str : string, onErrorReturnEmpty : boolean ): string { 
     if ( str === null || str === undefined || str.length === 0 ) {
         return onErrorReturnEmpty === true ? '' : str;
     } else {
@@ -70,7 +70,7 @@ export function upperFirstLetter( str : string, onErrorReturnEmpty : boolean ) {
     }
 }
 
-export function lowerFirstLetter( str : string, onErrorReturnEmpty : boolean ) { 
+export function lowerFirstLetter( str : string, onErrorReturnEmpty : boolean ): string { 
     if ( str === null || str === undefined || str.length === 0 ) {
         return onErrorReturnEmpty === true ? '' : str;
     } else {
@@ -89,7 +89,7 @@ export function lowerFirstLetter( str : string, onErrorReturnEmpty : boolean ) {
  *                                                                                                                       
  */
 
-export function randomizeCase(str: string) {
+export function randomizeCase(str: string): string {
     var result = '';
     if ( str !== null && str !== undefined  ) {
         for ( let i = 0; i < str.length; i++) {

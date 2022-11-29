@@ -2,7 +2,7 @@
 import { WebPartContextCopy152 } from '../../common/interfaces/WebPartContext@1.15.2';
 
 export interface IHandleBarReplacements {
-  [key: string]: string[];
+  // [key: string]: string[];
   Pages: string[];
   Lists: string[];
   Users: string[];
@@ -21,7 +21,16 @@ export const HandleBarReplacements : IHandleBarReplacements = {
 
 }
 
-export function replaceHandleBars( str: string , context: WebPartContextCopy152 ) {
+/**
+ * Replaces HandleBar style strings with known replacements from context
+ * 
+ * Used first in PageInfo converting web part prop input in relatedItems heading, web, ListTitle and restFilter
+ * 
+ * @param str 
+ * @param context 
+ * @returns 
+ */
+export function replaceHandleBars( str: string , context: WebPartContextCopy152 ): string {
 
     if ( !str ) { return '' ; } else {
 

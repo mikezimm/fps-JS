@@ -14,7 +14,6 @@ export * from './DOMTags';
 export * from './HelpfullErrors';
 
 
-
 export * from './LinkInterface';
 
 export * from './MathLabels';
@@ -35,6 +34,8 @@ export * from './QuickCommands';
 
 export * from './Randomize';
 export * from './Refiners';
+
+export * from './StringsIndex';
 
 export * from './UrlFunctions';
 export * from './WebPartContext@152';

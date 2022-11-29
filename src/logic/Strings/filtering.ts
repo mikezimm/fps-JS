@@ -8,9 +8,9 @@
  * @param anyCase - true converts all to lowerCase() for comparison first.  Else it is case sensitive
  */
 
-import { getStringArrayFromString } from "./stringServices";
+import { getStringArrayFromString } from "./arraysFromString";
 
-export function complexStringSearch( testThis: string, againstThis: string, testSplitter: string, notEqualString: string, anyCase: boolean ) {
+export function complexStringSearch( testThis: string, againstThis: string, testSplitter: string, notEqualString: string, anyCase: boolean ): boolean {
 
     if ( !testThis ) { return true ; } else {
         let againstThisCase = anyCase === true ? againstThis.toLowerCase() : againstThis;
