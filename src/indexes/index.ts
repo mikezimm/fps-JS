@@ -7,6 +7,8 @@ export * from './ArraySortingNumbers';
 export * from './ArraySortingObjects';
 export * from './ArraySortingStrings';
 
+export * from './CSSCharts';
+
 export * from './DisplayMode';
 export * from './DOMHeadings';
 export * from './DOMTags';
