@@ -10,12 +10,25 @@
  *                                                                                                                
  *    import { getSizeLabel } from '@mikezimm/npmfunctions/dist/Services/Strings/stringServices';                   
  */
-export function getSizeLabel ( size: number, decimal: number = 1 ) {
+
+ /**
+  * Converts a number into a label, used in eXTreme Storage to show 100 MB and 1.23 GB sizes
+  * @param size 
+  * @param decimal 
+  * @returns 
+  */
+export function getSizeLabel ( size: number, decimal: number = 1 ): string {
   if ( size === null || size === undefined ) { return '' ; }
   return size > 1e9 ? `${ (size / 1e9).toFixed(decimal) } GB` : size > 1e6 ? `${ (size / 1e6).toFixed(decimal) } MB` : size > 1e3 ? `${ ( size / 1e3).toFixed(decimal) } KB` : `${ ( size ).toFixed(decimal) } B`;
 }
 
-export function getCountLabel ( count: number, decimal: number = 1 ) {
+ /**
+  * Converts a number into a label, used in eXTreme Storage to show 1.6M and 2.3G sizes
+  * @param size 
+  * @param decimal 
+  * @returns 
+  */
+export function getCountLabel ( count: number, decimal: number = 1 ): string {
   if ( count === null || count === undefined ) { return '' ; }
   return count > 1e9 ? `${ (count / 1e9).toFixed(decimal) } G` : count > 1e6 ? `${ (count / 1e6).toFixed(decimal) } M` : count > 1e3 ? `${ ( count / 1e3).toFixed(decimal) } k` : `${ ( count ).toFixed(decimal) }`;
 }
@@ -26,7 +39,7 @@ export function getCountLabel ( count: number, decimal: number = 1 ) {
  * For EU:  1.000.000
  * @param numb
  */
-export function getCommaSepLabel( numb: number ) {
+export function getCommaSepLabel( numb: number ): string {
  return new Intl.NumberFormat().format(numb);
 
 }

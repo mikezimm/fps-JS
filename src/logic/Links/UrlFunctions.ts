@@ -2,7 +2,7 @@
 
 import { ISimpleLink } from './Interfaces';
 
-export function getBrowser(validTypes: any ,changeSiteIcon: any){
+export function getBrowser(validTypes: any ,changeSiteIcon: any): string{
 
   let thisBrowser = "";
   return thisBrowser;
@@ -23,6 +23,13 @@ export function amIOnThisWeb( webUrl: string ): boolean {
 
 }
 
+/**
+ * Takes in full url like from a list or library and tries to trim it down to a web url.
+ * Only is able to fix some links to common lists, libraries and system pages
+ * @param SiteLink 
+ * @param absoluteOrRelative 
+ * @returns 
+ */
 export function getWebUrlFromLink( SiteLink: string | null, absoluteOrRelative: 'abs' | 'rel' ) : string {
 
   if ( !SiteLink || SiteLink === '' ) {
@@ -57,6 +64,10 @@ export function getWebUrlFromLink( SiteLink: string | null, absoluteOrRelative: 
 
 }
 
+/**
+ * turns url variables into an object where the keys equal the paramters and the value is the value of the paramter
+ * @returns 
+ */
 export function getUrlVars() : any {
   let vars : any = {};
   if ( !location.search || location.search.length === 0 ) { return [] ; }
@@ -72,6 +83,10 @@ export function getUrlVars() : any {
   return params;
 }
 
+/**
+ * Returns standard link object with Url and Description
+ * @returns 
+ */
 export function getCurrentPageLink ( ) : ISimpleLink {
   let PageURL = window.location.href;
   let PageTitle = PageURL;
@@ -83,6 +98,12 @@ export function getCurrentPageLink ( ) : ISimpleLink {
   return PageLink;
 }
 
+/**
+ * Returns standard link object with Url and Description
+ * @param TargetList 
+ * @param webTitle 
+ * @returns 
+ */
 export function makeListLink ( TargetList: string , webTitle: string ) : ISimpleLink | null {
   let targetList: ISimpleLink | null = !TargetList ? null :{
       'Url': TargetList.indexOf('http') === 0 ? TargetList : window.location.origin + TargetList,
@@ -92,6 +113,12 @@ export function makeListLink ( TargetList: string , webTitle: string ) : ISimple
 
 }
 
+/**
+ * Returns standard link object with Url and Description
+ * @param TargetSite 
+ * @param webTitle 
+ * @returns 
+ */
 export function makeSiteLink ( TargetSite: string, webTitle: string ) : ISimpleLink | null {
 
   let targetSite: ISimpleLink | null = !TargetSite ? null : {

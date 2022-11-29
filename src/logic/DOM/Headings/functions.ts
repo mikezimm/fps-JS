@@ -6,7 +6,11 @@ import { IRegExTag } from '../Tags/Interfaces';
 // This needs to be moved downstream
 // require('./FPSHeadings.css');
 
-export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ) {
+/**
+ * Processes web part prop heading props and preps to update h2, h3, h4 tag styles.  NOTE SharePoint does not have h1 on the page.
+ * @param wpProps 
+ */
+export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ): void {
 
     if ( wpProps.h1Style ) {
       let pieces : any[] = wpProps.h1Style.split(';');
@@ -48,7 +52,15 @@ export function  applyHeadingCSS( wpProps: IMinHeadingStyleProps, ) {
   }
 
 
-export function FPSApplyHeadingCSS ( applyTag: IRegExTag, applyClass : IFPSHeadingClass[], alertError: boolean = true, consoleResult: boolean = false  ) {
+  /**
+ * This actually Applies CSS to html page headings h2, h3, h4 per web part props.  NOTE SharePoint does not have h1 on the page.
+ * @param applyTag 
+ * @param applyClass 
+ * @param alertError 
+ * @param consoleResult 
+ */
+
+export function FPSApplyHeadingCSS ( applyTag: IRegExTag, applyClass : IFPSHeadingClass[], alertError: boolean = true, consoleResult: boolean = false  ): void {
   const startTime = new Date();
   let classChanges: any[] = [];
 
@@ -82,7 +94,7 @@ export function FPSApplyHeadingCSS ( applyTag: IRegExTag, applyClass : IFPSHeadi
 
 }
 
-export function FPSApplyHeadingStyle ( applyTag: IRegExTag, cssText : string, alertError: boolean = true, consoleResult: boolean = false ) {
+export function FPSApplyHeadingStyle ( applyTag: IRegExTag, cssText : string, alertError: boolean = true, consoleResult: boolean = false ): void {
   const startTime = new Date();
   let classChanges: any[] = [];
 

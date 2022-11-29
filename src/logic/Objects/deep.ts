@@ -11,7 +11,7 @@ export type IReturnErrorType = 'Actual' | 'FullError' | 'ShortError' | 'EmptyStr
  * @param errReturnType - what to do when there is an error
  */
 
-export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IReturnErrorType ) {
+export function checkDeepProperty( obj: any, keys: string[] , errReturnType: IReturnErrorType ) : any {
 
   if ( !keys || keys.length === 0 ) { return obj; }
   else {
