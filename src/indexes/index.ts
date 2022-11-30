@@ -34,7 +34,7 @@ export * from './PnpjsListGetBasic';
 export * from './PnpjsListGetFull';
 export * from './PnpSPFxPropControls@3.11.0';
 
-export * from './PropertyPaneDropdown@152';
+export * from './IPropertyPaneDropdownOption@1.15.2';
 
 export * from './QuickCommands';
 
@@ -45,5 +45,5 @@ export * from './StringsIndex';
 
 export * from './UrlFunctions';
 
-export * from './WebPermissions@152';
+export * from './WebPartContext@152';
 export * from './WebPermissions@152';

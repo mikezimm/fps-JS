@@ -1,16 +1,4 @@
-
-
-
-/**
- * Data used for creating a SPPermission object.
- * Copied from 1.15.2 project:  node_modules\@microsoft\sp-odata-types\dist\index-internal.d.ts 
- * @public
- */
- export declare interface IODataBasePermission_15_2 {
-  Low: number;
-  High: number;
-}
-
+import { IODataBasePermission_15_2 } from "./IODataBasePermission@1.15.2";
 
 /**
  * COPIED FROM SPFx 1.15.2 Project:  node_modules\@microsoft\sp-page-context\dist\index-internal.d.ts
@@ -202,3 +190,5 @@
    */
   hasPermission(requestedPerm: SPPermissionCopy_15_2): boolean;
 }
+
+export { }
