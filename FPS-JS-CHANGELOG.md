@@ -5,11 +5,14 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.12
+npm install @mikezimm/fps-js@1.0.13
 
 
 
 # Changelog
+## 1.0.13 - 2202-Nov-28
+- Added mocked MSFT classes and interfaces
+
 ## 1.0.12 - 2202-Nov-28
 - Added src\logic\Time from: npmFunctions/src\Services\Time_
 - Added Class Copy:  SPPermissionCopy_15_2, added more to PageContextCopy_15_2

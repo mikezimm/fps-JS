@@ -13,6 +13,13 @@ WebPartContext >> WebPartContextCopy152
 SPPermissions >>
 IPropPaneDropdown... >> Need this for EveryoneAudience or I have to split code between 2 projects which need to be together to prevent typos.
 
+# Whats the difference between these?
+ export interface IPropertyPaneDropdownOption_15_2 {
+ export declare interface IPropertyPaneDropdownOption_15_2 {
+
+import { IODataBasePermission_15_2 } from "./IODataBasePermission";       << In all my SPFx projects, I just use this >>
+import type { IODataBasePermission_15_2 } from "./IODataBasePermission";
+
 # Can I use this syntax to externalize an entire library?
 "@microsoft/sp-property-pane": "*",
 

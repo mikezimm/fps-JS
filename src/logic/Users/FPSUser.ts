@@ -1,5 +1,5 @@
 
-import type { WebPartContextCopy_15_2 } from '../../common/interfaces/@msft/WebPartContext@1.15.2';
+import type { WebPartContextCopy_15_2 } from '../../common/interfaces/@msft/1.15.2/WebPartContext';
 
  // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
 //  import { SPPermission,  } from '@microsoft/sp-page-context';
