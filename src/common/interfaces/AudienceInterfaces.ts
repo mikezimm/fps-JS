@@ -1,6 +1,6 @@
 
 
-import { IPropertyPaneDropdownOption_15_2, } from './@msft/IPropertyPaneDropdownProps@1.15.2';
+import { IPropertyPaneDropdownOption_15_2, } from './@msft/IPropertyPaneDropdownOption@1.15.2';
 
 
 export type IAdminAudience = 'Site Admins';
