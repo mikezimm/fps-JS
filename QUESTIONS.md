@@ -2,14 +2,22 @@
 If not, update webpack.config:  fpsJSFunctions: path.resolve(__dirname, 'src/indexes/index.ts')  // myServices is the name of the library - external reference name:  myServices.js
 
 # Does it make sense to have a pnp library for JS and another for React?
-React is always on the page, fps-react will usually refer to fps-js.
+React is always on the page, 
+In EVERY web part, fps-react will refer to fps-js in some way.
 I may want to keep some things in the js library in sync with the react library.
+If so, can I have 2 separate indexes and roll into each other?
 
 # Can/Should I make my own local minimized version of microsoft classes in order to keep some typing?
 PageContext >> PageContextCopy152
 WebPartContext >> WebPartContextCopy152
 SPPermissions >>
 IPropPaneDropdown... >> Need this for EveryoneAudience or I have to split code between 2 projects which need to be together to prevent typos.
+
+# Can I use this syntax to externalize an entire library?
+"@microsoft/sp-property-pane": "*", 
+
+# Should I just externalize all the package dependancies 
+and then just make them dependancies on the web part project?
 
 # SCSS Loading
 I tried following this guide to make scss work:
