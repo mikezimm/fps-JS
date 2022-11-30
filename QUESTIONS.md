@@ -5,16 +5,26 @@ If not, update webpack.config:  fpsJSFunctions: path.resolve(__dirname, 'src/ind
 React is always on the page, fps-react will usually refer to fps-js.
 I may want to keep some things in the js library in sync with the react library.
 
-# Can I make my own local minimized version of microsoft classes in order to keep some typing?
+# Can/Should I make my own local minimized version of microsoft classes in order to keep some typing?
 PageContext >> PageContextCopy152
 WebPartContext >> WebPartContextCopy152
 SPPermissions >>
 IPropPaneDropdown... >> Need this for EveryoneAudience or I have to split code between 2 projects which need to be together to prevent typos.
 
+# SCSS Loading
+I tried following this guide to make scss work:
+https://www.developerhandbook.com/webpack/how-to-configure-scss-modules-for-webpack/
+
+But got some errors I could not resolve.
 
 # CSS CSS CSS.... 
 Had to remove src\logic\DOM\Headings\FPSHeadings.css from this package.
 Maybe for now just have separate npm for css, not have any logic in it at all?
+In my previous package, I ran this after cleaning but it throws an error if I add to ...
+Copy-Item "C:/Users/dev/Documents/GitHub/npmFunctions/src"  -filter '*.css' "C:/Users/dev/Documents/GitHub/npmFunctions/dist" -recurse -verbose
+
+like:
+"build": "del-cli \"./?(dist|lib)\" && Copy-Item \"C:/Users/dev/Documents/GitHub/npmFunctions/src\"  -filter '*.css' \"C:/Users/dev/Documents/GitHub/npmFunctions/dist\" -recurse -verbose && tsc -p ./tsconfig.json && webpack",
 
 # How do I get Readme and ChangeLog added to lib?
 Want version history etc to be copied as well
