@@ -51,6 +51,8 @@ module.exports = {
   externals: { // Read webpack documentation - do not want to bundle these into the package
     // "react": "React",
     // "lodash-es": "lodash-es/*"
+    "@microsoft/sp-property-pane": "*",
+    "@microsoft/sp-webpart-base": "*",
   },
   devServer: {
     compress: true,

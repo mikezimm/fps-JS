@@ -17,7 +17,7 @@ export * from './DOMTags';
 
 export * from './HelpfullErrors';
 
-export * from './IPropertyPaneDropdownOption@1.15.2';
+// export * from './IPropertyPaneDropdownOption@1.15.2';
 
 
 export * from './LinkInterface';
@@ -34,7 +34,7 @@ export * from './PnpjsListGetBasic';
 export * from './PnpjsListGetFull';
 export * from './PnpSPFxPropControls@3.11.0';
 
-export * from './IPropertyPaneDropdownOption@1.15.2';
+// export * from './IPropertyPaneDropdownOption@1.15.2';
 
 export * from './QuickCommands';
 
@@ -44,6 +44,6 @@ export * from './Refiners';
 export * from './StringsIndex';
 
 export * from './UrlFunctions';
+export * from './Users';
 
 export * from './WebPartContext@152';
-export * from './WebPermissions@152';

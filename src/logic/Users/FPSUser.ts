@@ -1,8 +1,8 @@
 
- import { WebPartContextCopy_15_2 } from '../../indexes/WebPartContext@152';
+import type { WebPartContextCopy_15_2 } from '../../common/interfaces/@msft/WebPartContext@1.15.2';
 
- // For SPPermissionCopy_15_2:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermissionCopy_15_2.addAndCustomizePages );
-import { SPPermissionCopy_15_2,  } from '../../indexes/WebPermissions@152';
+ // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
+//  import { SPPermission,  } from '@microsoft/sp-page-context';
 
 import { IUser, IFPSUser, ISimplePermission } from './IUserInterfaces';
 import { checkDeepProperty } from '../Objects/deep';
@@ -13,8 +13,15 @@ import { checkDeepProperty } from '../Objects/deep';
  * @param trickyEmails 
  * @param trickyApp 
  * @returns 
+ * 
+ *  * 2022-11-30:  in npmFunctions was context: WebPartContext,
  */
-export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmails: string[], trickyApp: string ): IFPSUser {
+
+// export function getFPSUser ( context: any, trickyEmails: string[], trickyApp: string ): IFPSUser {
+
+// 2022-11-30:  in npmFunctions was context: WebPartContext, added SPPermission as input because I am not bringing in the context
+// import { SPPermission,  } from '@microsoft/sp-page-context';
+export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmails: string[], trickyApp: string, SPPermission: any ): IFPSUser {
 
     const { user, web }  = context.pageContext;
     let startTime = new Date();
@@ -58,14 +65,14 @@ export function getFPSUser ( context: WebPartContextCopy_15_2, trickyEmails: str
             PrincipalType: userAny.PrincipalType? userAny.PrincipalType : null,
             isSiteAdmin: isSiteAdmin,
             isGuest: user.isExternalGuestUser,
-            manageWeb: web.permissions.hasPermission( SPPermissionCopy_15_2.manageWeb ),
-            managePermissions: web.permissions.hasPermission( SPPermissionCopy_15_2.managePermissions ),
-            enumeratePermissions: web.permissions.hasPermission( SPPermissionCopy_15_2.enumeratePermissions ),
-            addAndCustomizePages: web.permissions.hasPermission( SPPermissionCopy_15_2.addAndCustomizePages ), // aka design
-            manageLists: web.permissions.hasPermission( SPPermissionCopy_15_2.manageLists ),// aka edit
-            approveItems: web.permissions.hasPermission( SPPermissionCopy_15_2.approveItems ),
-            editListItems: web.permissions.hasPermission( SPPermissionCopy_15_2.editListItems ), // aka contribute
-            openItems: web.permissions.hasPermission( SPPermissionCopy_15_2.openItems ), // aka read
+            manageWeb: web.permissions.hasPermission( SPPermission.manageWeb ),
+            managePermissions: web.permissions.hasPermission( SPPermission.managePermissions ),
+            enumeratePermissions: web.permissions.hasPermission( SPPermission.enumeratePermissions ),
+            addAndCustomizePages: web.permissions.hasPermission( SPPermission.addAndCustomizePages ), // aka design
+            manageLists: web.permissions.hasPermission( SPPermission.manageLists ),// aka edit
+            approveItems: web.permissions.hasPermission( SPPermission.approveItems ),
+            editListItems: web.permissions.hasPermission( SPPermission.editListItems ), // aka contribute
+            openItems: web.permissions.hasPermission( SPPermission.openItems ), // aka read
             simple: 'None',
             crunchTime: -1,
 

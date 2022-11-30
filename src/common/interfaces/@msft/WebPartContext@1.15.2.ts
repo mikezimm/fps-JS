@@ -1,4 +1,3 @@
-import { SPPermissionCopy_15_2 } from "./WebPermissionsClass@1.15.2";
 
 export class LegacyPageContextCopy_15_2 {
   readonly isSiteAdmin: boolean;
@@ -13,7 +12,7 @@ export class PageContextCopy_15_2 {
       readonly title: string;
       readonly id: string; //This is really a 'Guid'
       readonly serverRelativeUrl: string;
-      readonly permissions: SPPermissionCopy_15_2;
+      // readonly permissions: SPPermission;
     }
     user: {
       readonly displayName: string;
@@ -39,7 +38,8 @@ export class PageContextCopy_15_2 {
       readonly languageName: string;
       readonly logoUrl: string;
       //npmFunctions/src\Services\Users\FPSUser.ts
-      permissions: SPPermissionCopy_15_2;
+      // permissions: SPPermission;
+      permissions: any;
     }
     site: {
       // id: string;
@@ -73,6 +73,7 @@ export class PageContextCopy_15_2 {
         */
         readonly currentUICultureName: string;
     }
+
     legacyPageContext: LegacyPageContextCopy_15_2;
 }
 

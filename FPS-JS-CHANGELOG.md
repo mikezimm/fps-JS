@@ -14,6 +14,7 @@ npm install @mikezimm/fps-js@1.0.11
 - Added src\logic\Time from: npmFunctions/src\Services\Time_
 - Added Class Copy:  SPPermissionCopy_15_2, added more to PageContextCopy_15_2
 - Added src\logic\Regex\constants.ts from:  npmFunctions/src\Services\Regex\constants.ts - Moved INullOrStringArray  from file
+- Added src\logic\Types\typeServices.ts from:  npmFunctions/src\Services\typeServices.ts - Moved INullOrStringArray
 
 - Add Users, Audiences and some MSFT Classes but they are now causing some build errors like this:
 WARNING in ./src/indexes/IPropertyPaneDropdownOption@1.15.2.ts 2:0-48

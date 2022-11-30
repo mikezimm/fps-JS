@@ -3,8 +3,8 @@
  */
 
 
- // For SPPermissionCopy_15_2:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermissionCopy_15_2.addAndCustomizePages );
-import { SPPermissionCopy_15_2 } from '../../indexes/WebPermissions@152';
+ // For SPPermission:  let addAndCustomizePages = pageContext.web.permissions.hasPermission( SPPermission.addAndCustomizePages );
+//  import { SPPermission,  } from '@microsoft/sp-page-context';
 
 import { IUser, IFPSUser, ISimplePermission } from './IUserInterfaces';
 
@@ -26,11 +26,14 @@ import { IEveryoneAudience } from  '../../common/interfaces/AudienceInterfaces';
  * @param FPSUser 
  * @param showTricks 
  * @param audience 
- * @param lastChancePermission 
+ * @param lastChancePermission :  
  * @param beAReader //2022-04-07:  Added to allow a site admin to 'act like a reader' to test functionality 
  *                 Be sure to pass in beAReader as false to if the feature you want to show should be visible such as the BeAReader button :)
+ * 
+ * 
+ * 2022-11-30:  in npmFunctions was lastChancePermission: SPPermission | null,
  */
-export function verifyAudienceVsUser ( FPSUser: IFPSUser, showTricks: boolean, audience: IEveryoneAudience, lastChancePermission: SPPermissionCopy_15_2 | null, beAReader: boolean ) {
+export function verifyAudienceVsUser ( FPSUser: IFPSUser, showTricks: boolean, audience: IEveryoneAudience, lastChancePermission: any | null, beAReader: boolean ) {
 
   let result = false;
 
