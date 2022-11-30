@@ -2,8 +2,10 @@
 If not, update webpack.config:  fpsJSFunctions: path.resolve(__dirname, 'src/indexes/index.ts')  // myServices is the name of the library - external reference name:  myServices.js
 
 # Does it make sense to have a pnp library for JS and another for React?
-React is always on the page, fps-react will usually refer to fps-js.
+React is always on the page, 
+In EVERY web part, fps-react will refer to fps-js in some way.
 I may want to keep some things in the js library in sync with the react library.
+If so, can I have 2 separate indexes and roll into each other?
 
 # Can/Should I make my own local minimized version of microsoft classes in order to keep some typing?
 PageContext >> PageContextCopy152
