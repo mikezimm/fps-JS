@@ -1,6 +1,6 @@
 {
   "name": "@mikezimm/fps-js",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Library of reusable typescript/javascript functions, interfaces and constants",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -50,7 +50,5 @@
   "files": [
     "/lib"
   ],
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }

@@ -5,7 +5,7 @@ npm run build
 npm version major/minor/patch
 npm publish --access=public
 
-npm install @mikezimm/fps-js@1.0.11
+npm install @mikezimm/fps-js@1.0.12
 
 
 

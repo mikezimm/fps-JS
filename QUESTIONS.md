@@ -14,9 +14,9 @@ SPPermissions >>
 IPropPaneDropdown... >> Need this for EveryoneAudience or I have to split code between 2 projects which need to be together to prevent typos.
 
 # Can I use this syntax to externalize an entire library?
-"@microsoft/sp-property-pane": "*", 
+"@microsoft/sp-property-pane": "*",
 
-# Should I just externalize all the package dependancies 
+# Should I just externalize all the package dependancies in all libraries
 and then just make them dependancies on the web part project?
 
 # SCSS Loading

@@ -14,7 +14,7 @@ import { IMyProgress, IMyFonts, IMyIcons } from '@mikezimm/npmfunctions/dist/Reu
  */
 
 export interface IMyProgress {
-  [key: string]: string | boolean | number | undefined;
+  // [key: string]: string | boolean | number | undefined;
     time: string;
     logLabel: string;
     label: string;
@@ -28,7 +28,7 @@ export interface IMyProgress {
   }
 
   export interface IMyFonts{
-    [key: string]: string | undefined;
+    // [key: string]: string | undefined;
     size?: string;
     weight?: string;
     style?: string;
@@ -36,7 +36,7 @@ export interface IMyProgress {
   }
 
   export interface IMyIcons{
-    [key: string]: string | boolean | undefined;
+    // [key: string]: string | boolean | undefined;
     hasIcon: boolean;
     name: string;
     size?: string;
@@ -46,7 +46,7 @@ export interface IMyProgress {
   }
 
   export interface IMyHistory {
-    [key: string]: number | IMyProgress[];
+    // [key: string]: number | IMyProgress[];
     count: number;
     errors: IMyProgress[];
     webs: IMyProgress[];
