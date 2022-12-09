@@ -29,9 +29,9 @@ export * from './ObjectDeep';
 export * from './ObjectKeys';
 export * from './ObjectSimilar';
 
-export * from './PnpjsFieldsConstants';
-export * from './PnpjsListGetBasic';
-export * from './PnpjsListGetFull';
+export * from './_PnpjsFieldsConstants_';
+export * from './_PnpjsListGetBasic_';
+export * from './_PnpjsListGetFull_';
 export * from './PnpSPFxPropControls@3.11.0';
 
 // export * from './IPropertyPaneDropdownOption@1.15.2';
