@@ -10,6 +10,9 @@ npm install @mikezimm/fps-js@1.0.13
 
 
 # Changelog
+## 1.0.14 - 2022-Dec-09
+- relocate ISeriesSortObject to src\logic\Arrays\sorting\Interfaces.ts
+
 ## 1.0.13 - 2202-Nov-28
 - Added mocked MSFT classes and interfaces
 
